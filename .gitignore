@@ -1,4 +1,5 @@
 # VSCode
 *.code-workspace
 
-#
+# MP4 Animation Outputs
+*.mp4
