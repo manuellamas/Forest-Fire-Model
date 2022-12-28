@@ -1,20 +1,16 @@
 
-### Main
 
-- [x] Get neighbors
-- [x] Think of how you'll want to see the up/bot/left/right neighbors
-- [x] And of the edge cases of the cells on the edges, that have less neighbors
-
-
-
-
-## Info
+## Model Info
 Parameters:
-- The p probability for lightining and tree spawning
-- w,h number of "pixels" (i.e. squares)
+- The g probability for lightining and tree spawning
+- w, h width and height of grid/map by number of cells
+- number of periods
+- Minor
+  - random seed
+  - option to save to `.mp4` file or to show immediately as it runs (without saving)
 
-Colors/states
-- Green if currently a tree unburned
-- Black if nothing or after being burned
-- Red right after being burned
 
+Cell colors/states:
+- Green — tree (unburned)
+- Black — empty, no tree in the cell (burning or not)
+- Red — burning tree (for one period only)
