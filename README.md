@@ -14,3 +14,9 @@ Cell colors/states:
 - Green — tree (unburned)
 - Black — empty, no tree in the cell (burning or not)
 - Red — burning tree (for one period only)
+
+## An example of the visualization with g = 0.95 and 3000 iterations
+
+
+https://user-images.githubusercontent.com/57732731/210415335-ba2d822f-0aef-4f7e-8d79-cf6091219b90.mp4
+
