@@ -180,12 +180,13 @@ def forestFireModel(g, num_iterations = 3_000, dimensions = (75, 50), save = Tru
 
     def update_plot(n, cell_map, burning_trees):
         """ Updates image at each frame """
-        nonlocal last_time # So that we can change last_time value even though it's within another function's scope
+        
+        nonlocal last_time # So that we can change last_time value even though it's in the outer function's scope
+
         cur_sec = int(time.time() - start)
 
-
         # Some feedback to know the code is running "ok"
-        if cur_sec > last_time:
+        if save and (cur_sec > last_time):
             last_time += 1
             if cur_sec % 10 == 0:
                 # print(cur_sec, last_time)
@@ -253,7 +254,7 @@ def forestFireModel(g, num_iterations = 3_000, dimensions = (75, 50), save = Tru
         ax.imshow(cell_map)
 
         # Set the title (for each frame)
-        ax.set_title(f"frame {n}")
+        ax.set_title(f"Period {n}")
 
         return cell_map, burning_trees
 
@@ -265,8 +266,9 @@ def forestFireModel(g, num_iterations = 3_000, dimensions = (75, 50), save = Tru
     ani = animation.FuncAnimation(fig, update_plot, num_iterations, fargs = (cell_map, burning_trees), interval = interval_ms, repeat = False) # Interval defines the delay between frames in miliseconds (smaller value means a smaller duration and thus faster)
 
 
-    if save: # Saves to MP4 file
-        ani.save("Forest_fire_model" + str(interval_ms) + ".mp4") # Make sure to create the folder before running
+    if save: # Saves to a mp4 file
+        ani.save("Forest_fire_model.mp4") # Make sure to create the folder before running
+        # ani.save("Forest_fire_model" + str(interval_ms) + ".mp4") # Make sure to create the folder before running
         # ani.save("Plot_animations\\Forest_fire_Model" + "" + ".mp4") # Make sure to create the folder before running
 
     else: # Presents (as it runs)
@@ -278,4 +280,5 @@ def forestFireModel(g, num_iterations = 3_000, dimensions = (75, 50), save = Tru
 
 
 
-forestFireModel(0.95, num_iterations = 3_000, save = False)
+# forestFireModel(0.95, num_iterations = 3_000, save = False)
+forestFireModel(0.95, num_iterations = 3_000, save = True)
