@@ -1,11 +1,11 @@
-
+A simple visualization of the [Forest-fire model](https://en.wikipedia.org/wiki/Forest-fire_model).
 
 ## Model Info
 Parameters:
 - The g probability for lightining and tree spawning
 - w, h width and height of grid/map by number of cells
 - number of periods
-- Minor
+- Other
   - random seed
   - option to save to `.mp4` file or to show immediately as it runs (without saving)
 
